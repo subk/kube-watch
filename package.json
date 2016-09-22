@@ -1,6 +1,6 @@
 {
   "name": "kube-watch",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Watch Kubernetes resources",
   "main": "./dist/index.js",
   "scripts": {
@@ -14,7 +14,13 @@
     "type": "git",
     "url": "https://github.com/subk/kube-watch.git"
   },
-  "keywords": [],
+  "keywords": [
+    "kubernetes",
+    "k8s",
+    "kube",
+    "watch",
+    "api"
+  ],
   "author": "max",
   "license": "MIT",
   "bugs": {
