@@ -10,6 +10,8 @@ $ npm i kube-watch
 
 ## [Quick start](#quick-start)
 
+`new KubeWatch(resource, options)` -> `EventEmitter`
+
 ```javascript
 import KubeWatch from 'kube-watch';
 
@@ -36,11 +38,8 @@ pods
 ## [Watching resources](#watching-resources)
 
 By default, [kube-watch](https://github.com/subk/kube-watch) will first request Kubernetes API to fetch the
-last `resourceVersion` for requested resource.  
-See [documentation](https://github.com/kubernetes/kubernetes/blob/master/docs/devel/api-conventions.md#concurrency-control-and-consistency) for more details.  
+last `resourceVersion` for requested resource. See [Kubernetes documentation](https://github.com/kubernetes/kubernetes/blob/master/docs/devel/api-conventions.md#concurrency-control-and-consistency) for more details.  
 If you want to specify `resourceVersion` manually, see [Query Parameters](#query-parameters) section.
-
-`new KubeWatch(resource, options)` -> `EventEmitter`
 
 ### [Supported API & Resources](#supported-api)
 See [Kubernetes API documentation](http://kubernetes.io/docs/api/) for more details.
