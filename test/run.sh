@@ -4,9 +4,6 @@ KUBE_PROXY_IP=${KUBE_PROXY_IP:-127.0.0.1}
 KUBE_PROXY_PORT=${KUBE_PROXY_PORT:-$(shuf -i 50000-60000 -n 1)}
 KUBE_PROXY_PREFIX=${KUBE_PROXY_PREFIX:-__test__}
 
-echo $KUBE_PROXY_PREFIX
-exit 0
-
 isInstalled () {
   which $1 2>&1 > /dev/null
 }
