@@ -153,7 +153,7 @@ See request's [TLS/SSL support](https://www.npmjs.com/package/request#tlsssl-pro
 
 ```javascript
 const services = new KubeWatch('services', {
-  url: 'https://kube-api-server/api/v1',
+  url: 'http://kube-api-server',
   request: {
     cert: fs.readFileSync(certFile),
     key: fs.readFileSync(keyFile),
