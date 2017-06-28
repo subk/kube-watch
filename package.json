@@ -4,7 +4,7 @@
   "description": "Watch Kubernetes resources",
   "main": "./dist/index.js",
   "scripts": {
-    "prebuild": "rimraf dist",
+    "prebuild": "rimraf dist && npm install",
     "build": "mkdir -p dist && babel src -o dist/index.js",
     "test": "test/run.sh",
     "test:watch": "mocha -w --compilers js:babel-register test/test.js",
