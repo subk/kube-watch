@@ -42,6 +42,9 @@ const apiResources = {
     'horizontalpodautoscalers',
     'ingresses',
     'jobs'
+  ],
+  'apps/v1beta1': [
+    'deployments',
   ]
 }
 
@@ -82,7 +85,12 @@ export default class extends EventEmitter {
     const namespace = options.namespace;
     const name = options.name;
     const events = options.events || defaultEvents;
-    const baseUrl = `${options.url}/api/${version}`;
+
+    let baseUrl = `${options.url}/api/${version}`;
+
+    if (version === 'apps/v1beta1') {
+      baseUrl = `${options.url}/apis/${version}`;
+    }
 
     // default HTTP resource
     // eg: http://api-server/api/v1/pods
