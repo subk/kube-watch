@@ -64,7 +64,7 @@ See [Kubernetes API documentation](http://kubernetes.io/docs/api/) for more deta
 - `ingresses`
 - `jobs`
 
-### [Overriding Resource Version](#override-resource-version)
+### [Overriding API Version](#override-resource-version)
 
 KubeWatch will attempt to automatically select the correct api version depending on requested resource, but you can override it like so:
 
