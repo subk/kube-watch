@@ -54,6 +54,8 @@ const notNamespaced = [
   'nodes'
 ];
 
+const alternatePathVersions = ['apps/v1beta1', 'extensions/v1beta1'];
+
 export default class extends EventEmitter {
   constructor (res = '', options = {}) {
     // be an EventEmitter
@@ -79,7 +81,7 @@ export default class extends EventEmitter {
     }
 
     // get api version
-    const version = findKey(apiResources, res => res.includes(resource));
+    const version = options.version || findKey(apiResources, res => res.includes(resource));
 
     // options
     const namespace = options.namespace;
@@ -88,7 +90,7 @@ export default class extends EventEmitter {
 
     let baseUrl = `${options.url}/api/${version}`;
 
-    if (version === 'apps/v1beta1') {
+    if (alternatePathVersions.includes(version)) {
       baseUrl = `${options.url}/apis/${version}`;
     }
 
@@ -161,7 +163,7 @@ export default class extends EventEmitter {
       }
       if (!rs.body || !rs.body.metadata || !rs.body.metadata.resourceVersion) {
         throw new Error('Could not get `resourceVersion`.\n'
-          + 'Please set it manually or retry.');
+          + 'Please set it manually or retry. URL [' + versionRequest.url + '] Response [' + JSON.stringify(rs) + ']');
       }
 
       // watch start at `resourceVersion`
