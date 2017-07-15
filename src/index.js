@@ -54,6 +54,8 @@ const notNamespaced = [
   'nodes'
 ];
 
+const alternatePathVersions = ['apps/v1beta1', 'extensions/v1beta1'];
+
 export default class extends EventEmitter {
   constructor (res = '', options = {}) {
     // be an EventEmitter
@@ -79,16 +81,16 @@ export default class extends EventEmitter {
     }
 
     // get api version
-    const version = findKey(apiResources, res => res.includes(resource));
+    const version = options.resourceVersion || findKey(apiResources, res => res.includes(resource))
 
     // options
     const namespace = options.namespace;
     const name = options.name;
     const events = options.events || defaultEvents;
-
+    
     let baseUrl = `${options.url}/api/${version}`;
 
-    if (version === 'apps/v1beta1') {
+    if (alternatePathVersions.includes(version)) {
       baseUrl = `${options.url}/apis/${version}`;
     }
 

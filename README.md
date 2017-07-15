@@ -64,7 +64,16 @@ See [Kubernetes API documentation](http://kubernetes.io/docs/api/) for more deta
 - `ingresses`
 - `jobs`
 
-API version will be automatically selected depending on requested resource.
+### [Overriding Resource Version](#override-resource-version)
+
+KubeWatch will attempt to automatically select the correct api version depending on requested resource, but you can override it like so:
+
+```javascript
+const services = new KubeWatch('services', {
+  url: 'http://kube-api-server',
+  resourceVersion: 'extensions/v1beta1'
+});
+```
 
 ### [by namespace](#watch-by-namespace)
 
