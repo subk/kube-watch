@@ -81,7 +81,7 @@ export default class extends EventEmitter {
     }
 
     // get api version
-    const version = options.resourceVersion || findKey(apiResources, res => res.includes(resource));
+    const version = options.version || findKey(apiResources, res => res.includes(resource));
 
     // options
     const namespace = options.namespace;

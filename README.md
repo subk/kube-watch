@@ -69,9 +69,9 @@ See [Kubernetes API documentation](http://kubernetes.io/docs/api/) for more deta
 KubeWatch will attempt to automatically select the correct api version depending on requested resource, but you can override it like so:
 
 ```javascript
-const services = new KubeWatch('services', {
+const ingresses = new KubeWatch('ingresses', {
   url: 'http://kube-api-server',
-  resourceVersion: 'extensions/v1beta1'
+  version: 'extensions/v1beta1'
 });
 ```
 
