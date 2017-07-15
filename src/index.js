@@ -87,7 +87,7 @@ export default class extends EventEmitter {
     const namespace = options.namespace;
     const name = options.name;
     const events = options.events || defaultEvents;
-    
+
     let baseUrl = `${options.url}/api/${version}`;
 
     if (alternatePathVersions.includes(version)) {
