@@ -163,7 +163,7 @@ export default class extends EventEmitter {
       }
       if (!rs.body || !rs.body.metadata || !rs.body.metadata.resourceVersion) {
         throw new Error('Could not get `resourceVersion`.\n'
-          + 'Please set it manually or retry.');
+          + 'Please set it manually or retry. URL [' + versionRequest.url + '] Response [' + JSON.stringify(rs) + ']');
       }
 
       // watch start at `resourceVersion`
