@@ -159,6 +159,10 @@ export default class extends EventEmitter {
       if (err) {
         throw err;
       }
+      if (rs.statusCode == 403) {
+        throw new Error('Forbidden. Check the permissions of the account: ' + rs.body);
+      }
+
       if (!rs.body || !rs.body.metadata || !rs.body.metadata.resourceVersion) {
         throw new Error('Could not get `resourceVersion`.\n'
           + 'Please set it manually or retry.');
