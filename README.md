@@ -1,4 +1,6 @@
 # kube-watch
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsubk%2Fkube-watch.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsubk%2Fkube-watch?ref=badge_shield)
+
 
 [Kubernetes](http://kubernetes.io) Watch API for node.
 
@@ -185,3 +187,7 @@ $ npm test
 
 ## [TODO](#todo)
 - Improve test suites by simulating workload
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsubk%2Fkube-watch.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsubk%2Fkube-watch?ref=badge_large)
