@@ -127,7 +127,8 @@ export default class extends EventEmitter {
         // something not expected, emit event as an error
         this.emit('error', event);
       }
-    });
+    })
+    .on('end', event => this.emit('end', event));
 
     // request options
     const watchRequest = {
